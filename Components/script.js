@@ -12,7 +12,6 @@ import {
 import { Running } from './runningClass.js';
 import { Cycling } from './cyclingClass.js';
 
-//////////////////////////////
 // APPLICATION ARCHITECTURE
 class App {
   // Private fields

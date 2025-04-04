@@ -1,7 +1,5 @@
-// Import the Workout class from the workoutClass.js file
 import { Workout } from './workoutClass.js';
 
-// Define a Running class that extends the Workout class
 class Running extends Workout {
   // Set the default type of the workout to 'running'
   type = 'running';
@@ -44,5 +42,4 @@ class Running extends Workout {
   }
 }
 
-// Export the Running class so it can be used in other modules
 export { Running };

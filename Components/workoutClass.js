@@ -1,6 +1,3 @@
-import { inputType } from './domElements.js';
-
-// Define a class to represent a workout
 class Workout {
   // Automatically set the current date when a new workout is created
   date = new Date();
