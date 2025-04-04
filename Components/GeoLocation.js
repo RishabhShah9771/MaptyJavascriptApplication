@@ -4,15 +4,24 @@ export const geoLocation = () => {
       position => {
         const { latitude } = position.coords;
         const { longitude } = position.coords;
-        console.log(latitude, longitude);
+        const coords = [latitude, longitude];
+        const map = L.map('map').setView(coords, 17);
 
-        const url = `https://www.google.ca/maps/@${latitude},${longitude}`;
-        console.log(url);
-        console.log(position);
+        L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+          subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+          attribution:
+            '&copy; <a href="https://maps.google.com">Google Maps</a>',
+        }).addTo(map);
+
+        L.marker(coords)
+          .addTo(map)
+          .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+          .openPopup();
       },
       () => {
-        alert('Please enable location services');
-      }
+        alert('Sorry, we could not get your location.');
+      },
+      {}
     );
   }
 };
