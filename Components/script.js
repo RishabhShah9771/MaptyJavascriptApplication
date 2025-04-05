@@ -1,6 +1,5 @@
 'use strict';
 
-// Importing required DOM elements and classes
 import {
   form,
   inputDistance,
@@ -66,6 +65,11 @@ class App {
 
     // Add click event listener to the map
     this.#map.on('click', this._showForm.bind(this));
+
+    // Render existing workouts on the map
+    this.#workouts.forEach(work => {
+      this._renderWorkOutMarker(work);
+    });
   }
 
   // Show the form when the map is clicked
